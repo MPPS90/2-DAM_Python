@@ -4,7 +4,7 @@ Los nombres de los días de la semana deben estar almacenados en una tupla.'''
 
 def diaSemana(n):
     while(n < 1 or n > 7):
-        n = input("El número debe ser entre 1 y 7 ")
+        n = int(input("El número debe ser entre 1 y 7 "))
 
     dias=["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
     if n ==7:
@@ -12,5 +12,6 @@ def diaSemana(n):
     else:
         return print(dias[n - 1], dias[n])
 
-diaSemana(7)
+diaSemana(int(input("El número debe ser entre 1 y 7 ")))
+
 
