@@ -15,17 +15,17 @@ import random
 # 1. Crear una lista aleatoria no ordenada de 50 números entre 1 y 20:
 lista = []
 for i in range(50):
-    lista.append(random.randint(1,21))  # aqui relleno la lista con los randoms, si lo declaro arriba con un random tendría que poner entonces abajo range(49) porque la de arriba ya lo cuenta como 1
+    lista.append(random.randint(1,
+                                21))  # aqui relleno la lista con los randoms, si lo declaro arriba con un random tendría que poner entonces abajo range(49) porque la de arriba ya lo cuenta como 1
 print("la longitud es:", len(lista))
 
-for indice in range(0, len(lista)):  #for normal
+for indice in range(0, len(lista)):  # for normal
     print(lista[indice])
 
 '''
 for indice in lista
     print(lista[indice])   -> for each ->aquí cada indice es el valor del array no la posición por eso lista[indice] sería lista[valordelalista] no lista[posicion]
 '''
-
 
 # 2. Implementar funciones que realicen asl siguientes operaciones:
 '''
@@ -44,8 +44,7 @@ buscar_num(lista, int(input("Ingrese numero")))
     
 '''
 
-
-
+'''
 #2 contar(lista, numero): devuelve el número de veces que aparece el número buscado.
 def contar_num(lista, numero):
     contador = 0
@@ -56,7 +55,73 @@ def contar_num(lista, numero):
             contador +=1
     print(contador)
     if not encontrado:
-        return print(-1)
+        print(-1)
+        #return print(-1)
 
 
 contar_num(lista, int(input("Ingrese número")))
+'''
+
+'''
+# 3. contar_maximo(lista): calcula el número máximo en la lista y devuelva cuántas veces aparece.
+def contar_maximo(lista):
+    maximo = 0
+    contar = 0
+    for i in range(0, len(lista)):
+        if lista[i] > maximo:
+            maximo = lista[i]
+            contar = 1
+        elif lista[i] == maximo:
+            contar += 1
+    print("El número máximo de la lista es: ", maximo , " y aparece ", contar)
+    return contar
+
+contar_maximo(lista)
+'''
+
+'''
+#4. calcular_media(lista): calcular la media de todos los números en la lista.
+def calcular_media(lista):
+    media = 0
+    suma = 0
+    for i in range(0, len(lista)):
+        suma += lista[i]
+    media = suma / len(lista)
+    print("La media de la lista es: ", media)
+
+calcular_media(lista)
+'''
+
+#5. inversa: devolver lista inversa a la dada, donde el primer elemento sea el
+# último de la lista original, el segundo elemento sea el penúltimo de la lista original, y así sucesivamente.
+'''
+def inversa(lista):
+    for i in range(len(lista)-1, -1, -1): #range(start, stop, step)-> start= len(lista)-1 empezar en la ultima posición del array, stop = -1 ->como el stop no incluye el último es como decirle que vaya hasta que i=0, step= ir decrementando 1 en cada iteración 
+        print("nueva lista inversa: ", lista[i])
+
+inversa(lista)
+'''
+'''
+def inversa(lista):
+    print(lista[::-1]) #range(start, stop, step)-> start vacio->empezar desde el principio, stop vacio->terminar hasta el final, step -1 -> ir restando 1 en cada iteración
+
+inversa(lista)
+'''
+
+'''
+#6. insertar(lista, numero, posicion): inserta un número en la lista en la posición indicada y devuelve la nueva lista
+def insertar(lista, numero, posicion):
+    lista.insert(posicion, numero)
+    print("Nueva lista: ", lista)
+
+insertar(lista, int(input("numero: ")), int(input("posicion: ")))
+'''
+
+'''
+#7. insertar(lista, numero, posicion): inserta un número en la propia lista
+def insertar(lista, numero):
+    lista.append(numero)
+    print("lista: ", lista)
+
+insertar(lista, int(input("numero: ")))
+'''
